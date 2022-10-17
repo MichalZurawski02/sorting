@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -13,20 +15,17 @@ import javafx.stage.Stage;
 import org.example.algorithms.BubbleSort;
 import org.example.algorithms.SortAlgorithm;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class App extends Application {
 
-    private static final int WINDOW_WIDTH = 400;
-    private static final int WINDOW_HEIGHT = 65;
+    private static final int WINDOW_WIDTH = 1080;
+    private static final int WINDOW_HEIGHT = 720;
 
     public static void main(String[] args) {
         Application.launch(args);
     }
+    
     @Override
-    public void start(Stage stage){
-        BorderPane root = new BorderPane();
+    public void start(Stage stage) {
         final Button exitButton = new Button("exit");
         exitButton.setOnAction(e -> System.exit(0));
 
@@ -42,7 +41,8 @@ public class App extends Application {
         VBox output = new VBox();
         output.getChildren().addAll(label, label2);
         top.getChildren().addAll(input,addButton,quickSortButton,bubbleSortButton);
-
+    
+        BorderPane root = new BorderPane();
         root.setTop(top);
         root.setCenter(output);
 
@@ -78,7 +78,6 @@ public class App extends Application {
                 sort.sort(arrayList);
                 label2.setText(arrayList.toString());
             } catch (InterruptedException ex) {
-                throw new RuntimeException(ex);
             }
         }));
 

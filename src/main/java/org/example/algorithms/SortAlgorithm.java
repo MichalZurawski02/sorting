@@ -16,6 +16,7 @@ public abstract class SortAlgorithm {
         this.toSort.set(x, this.toSort.get(y));
         this.toSort.set(y, temp);
     }
+    
     protected abstract void sort() throws InterruptedException;
 
 }
