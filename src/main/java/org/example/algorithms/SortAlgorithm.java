@@ -1,6 +1,8 @@
 package org.example.algorithms;
+
 import java.util.List;
-public abstract class sortAlgorithm {
+
+public abstract class SortAlgorithm {
 
     protected List<Integer> toSort;
 

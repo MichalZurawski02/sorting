@@ -1,6 +1,6 @@
 package org.example.algorithms;
 
-class quickSort extends sortAlgorithm {
+public class QuickSort extends SortAlgorithm {
 
     @Override
     protected void sort(){
@@ -8,7 +8,8 @@ class quickSort extends sortAlgorithm {
     }
 
     private void quicksort(int low, int high){
-        int i = low, j = high;
+        int i = low;
+        int j = high;
         int pivot = this.toSort.get(low + (high-low) / 2);
 
         while (i <= j) {
